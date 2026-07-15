@@ -1,0 +1,29 @@
+const blogPosts = [
+    // 👇 第 1 篇文章（最新的文章放最上面）
+    {
+        date: "2026-07-15",
+        title: "我的第一篇博客",
+        summary: "今天成功把博客部署到了 GitHub Pages，感觉非常棒！",
+        link: "#",
+        tags: ["Life", "Git"]
+    }, // ⚠️ 注意：这里必须有英文逗号！
+
+    // 👇 第 2 篇文章
+    {
+        date: "2026-07-10",
+        title: "HTML与CSS学习笔记",
+        summary: "整理了前端基础的核心概念，包括盒模型和Flex布局。",
+        link: "#",
+        tags: ["Tech", "Frontend"]
+    }, // ⚠️ 注意：这里必须有英文逗号！
+
+    // 👇 第 3 篇文章（最后一篇不需要逗号）
+    {
+        date: "2026-07-01",
+        title: "Hello World",
+        summary: "系统初始化完成，准备记录接下来的学习旅程。",
+        link: "#",
+        tags: ["System"]
+    } 
+    // ⚠️ 最后一篇文章的结尾绝对不能有逗号！
+];
