@@ -1,68 +1,159 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAL737_BLOG | Home</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* 主页专属样式 */
-        header { padding: 80px 0 50px; text-align: center; }
-        .glitch-title {
-            font-size: 3rem; font-weight: 900; letter-spacing: 2px;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 16px;
-        }
-        .typewriter { font-size: 1.1rem; color: var(--neon-blue); border-right: 2px solid var(--neon-blue); padding-right: 5px; }
-        .post-list { list-style: none; display: flex; flex-direction: column; gap: 24px; padding-bottom: 60px; }
-        .post-card {
-            background: var(--card-bg); border: 1px solid var(--card-border);
-            border-radius: 12px; padding: 30px; backdrop-filter: blur(10px);
-            transition: all 0.4s; opacity: 0; transform: translateY(30px);
-        }
-        .post-card.visible { opacity: 1; transform: translateY(0); }
-        .post-card:hover { border-color: rgba(0, 243, 255, 0.3); box-shadow: 0 10px 40px -10px rgba(0, 243, 255, 0.15); transform: translateY(-5px) !important; }
-        .post-card h2 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; }
-        .post-card h2 a { text-decoration: none; color: inherit; transition: all 0.3s; }
-        .post-card h2 a:hover { color: var(--neon-blue); text-shadow: 0 0 10px rgba(0,243,255,0.4); }
-        .post-meta { font-size: 0.8rem; color: var(--neon-purple); margin-bottom: 12px; font-weight: bold; letter-spacing: 1px; }
-        .post-excerpt { color: var(--text-dim); font-size: 0.95rem; }
-        footer { text-align: center; padding: 40px 0; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid var(--card-border); margin-top: 20px; }
-    </style>
-</head>
-<body>
-    <div class="stars"></div>
-    <div class="container">
-        <header>
-            <h1 class="glitch-title">CAL737_BLOG</h1>
-            <div class="typewriter" id="typewriter"></div>
-        </header>
-        <nav>
-            <a href="/">[ Home ]</a>
-            <a href="/archives.html">[ Archives ]</a>
-            <a href="/about.html">[ About ]</a>
-            <a href="https://github.com/CAL737" target="_blank">[ GitHub ]</a>
-        </nav>
-        <main>
-            <ul class="post-list">
-                <li class="post-card">
-                    <div class="post-meta">// 2026-07-15 · SYSTEM_INIT</div>
-                    <h2><a href="#">Hello World: 系统初始化完成</a></h2>
-                    <p class="post-excerpt">个人博客节点已成功部署。这里将作为我的数字花园，记录代码、技术探索与赛博空间中的碎片思考...</p>
-                </li>
-            </ul>
-        </main>
-        <footer>&copy; 2026 CAL737 | Powered by Pure HTML/CSS & Neon Dreams</footer>
-    </div>
-    <script>
-        const text = "> Welcome to my digital space. Loading thoughts..._";
-        const el = document.getElementById('typewriter');
-        let i = 0;
-        function type() { if (i < text.length) { el.innerHTML += text.charAt(i); i++; setTimeout(type, 80); } }
-        type();
-        const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold: 0.1});
-        document.querySelectorAll('.post-card').forEach(c => obs.observe(c));
-    </script>
-</body>
-</html>
+/* =========================================
+   CAL737_BLOG - CORE STYLESHEET
+   Theme: Cyberpunk / Terminal Dark
+   ========================================= */
+
+/* 1. 全局变量定义 (方便以后改颜色) */
+:root {
+    --bg-color: #050505;       /* 极深黑背景 */
+    --card-bg: rgba(20, 20, 25, 0.8); /* 半透明卡片 */
+    --text-main: #e0e0e0;      /* 主要文字 */
+    --text-dim: #8892b0;       /* 次要文字 */
+    --accent-cyan: #00f3ff;    /* 赛博青 */
+    --accent-purple: #bd00ff;  /* 霓虹紫 */
+    --font-mono: 'Courier New', Courier, monospace; /* 等宽字体 */
+}
+
+/* 2. 基础重置与排版 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden; /* 防止横向滚动条 */
+    
+    /* 纯CSS生成的星空背景，不需要图片 */
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* 3. 布局容器 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 4. 导航栏 (Header) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+nav a {
+    margin-left: 20px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 5px var(--accent-cyan);
+}
+
+/* 5. 通用卡片样式 (用于文章列表、归档等) */
+.card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 5px 15px rgba(0, 243, 255, 0.1);
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card h2 a:hover {
+    color: var(--accent-cyan);
+}
+
+.meta {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* 6. 终端风格特效 (用于 About 页或标题) */
+.terminal-text {
+    color: var(--accent-cyan);
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: var(--accent-cyan);
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 7. 底部 (Footer) */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+/* 8. 移动端适配 */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    nav a { margin: 0; }
+}
