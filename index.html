@@ -4,65 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAL737_BLOG | Home</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* 主页专属样式 */
-        header { padding: 80px 0 50px; text-align: center; }
-        .glitch-title {
-            font-size: 3rem; font-weight: 900; letter-spacing: 2px;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 16px;
+        /* --- 全局变量与基础样式 --- */
+        :root {
+            --bg-color: #050505; --card-bg: rgba(20,20,25,0.8); --text-main: #e0e0e0; 
+            --text-dim: #8892b0; --accent: #00f3ff; --border: rgba(255,255,255,0.1);
         }
-        .typewriter { font-size: 1.1rem; color: var(--neon-blue); border-right: 2px solid var(--neon-blue); padding-right: 5px; }
-        .post-list { list-style: none; display: flex; flex-direction: column; gap: 24px; padding-bottom: 60px; }
-        .post-card {
-            background: var(--card-bg); border: 1px solid var(--card-border);
-            border-radius: 12px; padding: 30px; backdrop-filter: blur(10px);
-            transition: all 0.4s; opacity: 0; transform: translateY(30px);
+        [data-theme="light"] {
+            --bg-color: #f4f4f5; --card-bg: #ffffff; --text-main: #1f2937; 
+            --text-dim: #6b7280; --accent: #2563eb; --border: rgba(0,0,0,0.1);
         }
-        .post-card.visible { opacity: 1; transform: translateY(0); }
-        .post-card:hover { border-color: rgba(0, 243, 255, 0.3); box-shadow: 0 10px 40px -10px rgba(0, 243, 255, 0.15); transform: translateY(-5px) !important; }
-        .post-card h2 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; }
-        .post-card h2 a { text-decoration: none; color: inherit; transition: all 0.3s; }
-        .post-card h2 a:hover { color: var(--neon-blue); text-shadow: 0 0 10px rgba(0,243,255,0.4); }
-        .post-meta { font-size: 0.8rem; color: var(--neon-purple); margin-bottom: 12px; font-weight: bold; letter-spacing: 1px; }
-        .post-excerpt { color: var(--text-dim); font-size: 0.95rem; }
-        footer { text-align: center; padding: 40px 0; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid var(--card-border); margin-top: 20px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        body { background: var(--bg-color); color: var(--text-main); font-family: 'Courier New', monospace; line-height: 1.6; padding: 40px 20px; min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; }
+
+        /* --- 顶部导航与主题切换 --- */
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--accent); text-decoration: none; }
+        .theme-toggle { background: none; border: 1px solid var(--border); color: var(--text-dim); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.8rem;}
+        .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* --- 标签筛选器 --- */
+        .tags-filter { margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag-btn { background: none; border: 1px solid var(--border); color: var(--text-dim); padding: 4px 12px; border-radius: 20px; cursor: pointer; font-family: inherit; font-size: 0.8rem; transition: 0.3s;}
+        .tag-btn.active, .tag-btn:hover { background: var(--accent); color: var(--bg-color); border-color: var(--accent); }
+
+        /* --- 文章卡片 --- */
+        .post-item { border-left: 2px solid var(--border); padding-left: 20px; margin-bottom: 30px; transition: 0.3s; }
+        .post-item:hover { border-left-color: var(--accent); transform: translateX(5px); }
+        .date { color: var(--text-dim); font-size: 0.85rem; display: block; margin-bottom: 5px; }
+        .title { font-size: 1.2rem; color: var(--text-main); text-decoration: none; font-weight: bold; display: block; margin-bottom: 8px;}
+        .title:hover { color: var(--accent); }
+        .summary { color: var(--text-dim); font-size: 0.95rem; }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
     <div class="container">
         <header>
-            <h1 class="glitch-title">CAL737_BLOG</h1>
-            <div class="typewriter" id="typewriter"></div>
+            <a href="/" class="logo">> CAL737_BLOG_</a>
+            <button class="theme-toggle" id="themeBtn">[ Toggle Light ]</button>
         </header>
-        <nav>
-            <a href="/">[ Home ]</a>
-            <a href="/archives.html">[ Archives ]</a>
-            <a href="/about.html">[ About ]</a>
-            <a href="https://github.com/CAL737" target="_blank">[ 我的GitHub ]</a>
-        </nav>
-        <main>
-            <ul class="post-list">
-                <li class="post-card">
-                    <div class="post-meta">// 2026-07-15 · SYSTEM_INIT</div>
-                    <h2><a href="#">Hello World: 系统初始化完成</a></h2>
-                    <p class="post-excerpt">个人博客节点已成功部署。这里将作为我的数字花园，记录代码、技术探索与赛博空间中的碎片思考...</p>
-                </li>
-            </ul>
+
+        <!-- 标签过滤区 -->
+        <div class="tags-filter" id="tagsFilter">
+            <!-- JS 会自动生成标签按钮 -->
+        </div>
+
+        <!-- 文章列表 -->
+        <main id="post-container">
+            <p style="color: var(--text-dim);">> System initializing...</p>
         </main>
-        <footer>&copy; 2026 CAL737 | Powered by Pure HTML/CSS & Neon Dreams</footer>
     </div>
+
+    <script src="posts.js"></script>
     <script>
-        const text = "> Welcome to my digital space. Loading thoughts..._";
-        const el = document.getElementById('typewriter');
-        let i = 0;
-        function type() { if (i < text.length) { el.innerHTML += text.charAt(i); i++; setTimeout(type, 80); } }
-        type();
-        const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold: 0.1});
-        document.querySelectorAll('.post-card').forEach(c => obs.observe(c));
+        // 1. 主题切换逻辑
+        const themeBtn = document.getElementById('themeBtn');
+        themeBtn.addEventListener('click', () => {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            document.documentElement.setAttribute('data-theme', isLight ? 'dark' : 'light');
+            themeBtn.textContent = isLight ? '[ Toggle Light ]' : '[ Toggle Dark ]';
+        });
+
+        // 2. 渲染文章与标签逻辑
+        const container = document.getElementById('post-container');
+        const tagsFilter = document.getElementById('tagsFilter');
+        let currentTag = 'All';
+
+        function render() {
+            // 提取所有不重复的标签
+            const allTags = ['All', ...new Set(blogPosts.flatMap(p => p.tags || []))];
+            
+            // 渲染标签按钮
+            tagsFilter.innerHTML = allTags.map(tag => 
+                `<button class="tag-btn ${tag === currentTag ? 'active' : ''}" data-tag="${tag}">#${tag}</button>`
+            ).join('');
+
+            // 绑定标签点击事件
+            tagsFilter.querySelectorAll('.tag-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentTag = btn.dataset.tag;
+                    render(); // 重新渲染
+                });
+            });
+
+            // 过滤并渲染文章
+            const filtered = currentTag === 'All' ? blogPosts : blogPosts.filter(p => p.tags && p.tags.includes(currentTag));
+            
+            container.innerHTML = filtered.length > 0 ? filtered.map(post => `
+                <article class="post-item">
+                    <span class="date">// ${post.date}</span>
+                    <a href="${post.link}" class="title">${post.title}</a>
+                    <p class="summary">${post.summary}</p>
+                </article>
+            `).join('') : '<p>> No matching logs found.</p>';
+        }
+
+        // 初始化
+        if (typeof blogPosts !== 'undefined') render();
     </script>
 </body>
 </html>
