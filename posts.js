@@ -6,4 +6,12 @@ const blogPosts = [
         link: "#",                     // 4. 将 links 改为 link，以匹配渲染逻辑
         tags: ["文章", "Cloudflare"]   // 5. 标签之间加上逗号
     } // 最后一篇文章，结尾不需要逗号
+
+    ,{
+        date: "2026/07/17 20：48 BJT",
+        title: "我的第二篇博客",
+        summary: "ok呀也是写了第二篇文章，之后我会尝试单开一页写文章，就这样吧",
+        link: "#",
+        tags: ["文章", "JavaScript"]
+    }
 ];
