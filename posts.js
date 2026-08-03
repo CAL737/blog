@@ -29,5 +29,13 @@ const blogPosts = [
         summary: "哈哈哈哈哈，我找回了我的Apple账户！！！！",
         link: "#",
         tags: ["Apple账户"]
+    },
+
+    {
+        date:"2026/8/1 8:00 BJT",
+        title:"发布了新视频",
+        summary:"我发布了一期新的视频，请多支持！视频链接https://www.bilibili.com/video/BV1riGP67EBA",
+        link:"#",
+        tags:["新视频","八一建军节"]
     }
 ];
