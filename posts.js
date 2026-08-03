@@ -34,7 +34,7 @@ const blogPosts = [
     {
         date:"2026/8/1 8:00 BJT",
         title:"发布了新视频",
-        summary:"我发布了一期新的视频，请多支持！视频链接https://www.bilibili.com/video/BV1riGP67EBA",
+        summary:"我发布了一期新的视频，请多支持！<a href='https://www.bilibili.com/video/BV1riGP67EBA' target='_blank'>点击跳转我的视频</a>",
         link:"#",
         tags:["新视频","八一建军节"]
     }
