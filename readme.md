@@ -1,6 +1,6 @@
-#  CAL737_BLOG
+#  wyj484的Blog
 
-> ️ **SYSTEM ALERT:** Welcome to CAL737's Digital Space.  
+> ️ **SYSTEM ALERT:** Welcome to wyj484's Digital Space.  
 > 这是一个纯手工打造的暗黑极客风个人博客，没有使用任何臃肿的框架，仅依靠原生 HTML/CSS/JS 构建。
 
 ---
