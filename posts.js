@@ -37,5 +37,13 @@ const blogPosts = [
         summary:"我发布了一期新的视频，请多支持！<a href='https://www.bilibili.com/video/BV1riGP67EBA' target='_blank'>点击跳转我的视频</a>",
         link:"#",
         tags:["新视频","八一建军节"]
+    },
+
+    {
+        date:"2026/9/25 23:30 BJT",
+        title:"我吃了顿大餐",
+        summary:"今天是中秋节，在晚上，我吃了顿丰盛的晚餐，给我吃美了😋",
+        link:"#",
+        tags:["中秋节"]
     }
 ];
