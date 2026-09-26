@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我吃了顿大餐 | wyj484的Blog</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ===== 文章页专属样式（复用 style.css 的变量与主题） ===== */
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed rgba(0, 243, 255, 0.25);
+        }
+
+        .article-header h1 {
+            font-size: 1.8rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .article-header h1::before {
+            content: "# ";
+            color: var(--accent-purple);
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+        }
+
+        .article-meta .tag {
+            color: var(--accent-cyan);
+        }
+
+        /* 正文排版 */
+        .article-body p {
+            margin-bottom: 20px;
+            font-size: 0.98rem;
+            color: var(--text-main);
+        }
+
+        .article-body h2 {
+            font-size: 1.15rem;
+            margin: 40px 0 18px;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px rgba(0, 243, 255, 0.35);
+        }
+
+        .article-body h2::before {
+            content: "> ";
+            color: var(--accent-purple);
+        }
+
+        .article-body strong {
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        .article-body em {
+            color: var(--accent-purple);
+            font-style: normal;
+        }
+
+        /* 引用块 */
+        .article-body blockquote {
+            border-left: 3px solid var(--accent-purple);
+            background: rgba(189, 0, 255, 0.06);
+            padding: 15px 20px;
+            margin: 25px 0;
+            color: var(--text-dim);
+            font-size: 0.92rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* 图片 */
+        figure {
+            margin: 30px 0;
+        }
+
+        figure img {
+            width: 100%;
+            display: block;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 243, 255, 0.25);
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.12);
+        }
+
+        figcaption {
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        figcaption::before {
+            content: "// ";
+            color: var(--accent-cyan);
+        }
+
+        /* 菜单列表 */
+        .menu-list {
+            list-style: none;
+            margin: 20px 0 30px;
+        }
+
+        .menu-list li {
+            padding: 10px 0 10px 26px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .menu-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 4px;
+            color: var(--accent-cyan);
+        }
+
+        .menu-list li span {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        /* 返回链接 */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 4px;
+        }
+
+        .back-link:hover {
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 12px rgba(0, 243, 255, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .article-header h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="logo">> wyj484的Blog</a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../index.html">Archive</a>
+            </nav>
+        </header>
+
+        <main>
+            <article>
+                <div class="article-header">
+                    <h1>我吃了顿大餐</h1>
+                    <div class="article-meta">
+                        <span>// 2026/9/25 23:30 BJT</span>
+                        <span class="tag">#中秋节</span>
+                    </div>
+                </div>
+
+                <div class="article-body">
+                    <p>
+                        今天是 <strong>2026 年 9 月 25 日</strong>，农历八月十五，中秋节。
+                        白天的时候天气还不错，到了傍晚，天边那轮月亮就已经隐隐约约地挂上来了，
+                        又圆又亮，像是提前来赴约的老朋友。
+                    </p>
+
+                    <p>
+                        说实话，我对中秋节的期待，一半在月亮，另一半——甚至更多——在饭桌上。
+                        今年家里照旧是全员到齐，长辈们从下午三点就开始在厨房里忙活，
+                        锅碗瓢盆的声音从厨房一路飘到客厅，闻着味儿我就知道，今晚这顿稳了。
+                    </p>
+
+                    <figure>
+                        <img src="../image/MVIMG_20260925_215300.jpg" alt="2026年中秋节家宴的餐桌，摆满了丰盛的菜肴与饮料">
+                        <figcaption>21:53 的餐桌，菜还没上齐，我已经开始咽口水了</figcaption>
+                    </figure>
+
+                    <h2>开饭前的仪式感</h2>
+
+                    <p>
+                        晚上八点多，最后一道汤端上桌，圆桌终于被摆得满满当当。
+                        按照家里的老规矩，长辈先动筷，然后大家才一起开吃。
+                        我趁着大家还在寒暄，赶紧掏出手机拍了一张——
+                        就是上面这张，时间是 <em>21:53</em>，正好是菜最全、热气最足的时候。
+                    </p>
+
+                    <blockquote>
+                        中秋的意义，大概就是：月亮在天上圆，人在桌边圆，菜在盘子里也圆。
+                    </blockquote>
+
+                    <h2>今晚的菜单</h2>
+
+                    <p>粗略数了一下，桌上大大小小一共十来道菜，我挑几个印象最深的记一下：</p>
+
+                    <ul class="menu-list">
+                        <li>清蒸大闸蟹 <span>—— 中秋限定，蟹黄饱满，蘸姜醋一绝</span></li>
+                        <li>红烧肉 <span>—— 炖得软糯入味，肥而不腻，配米饭无敌</span></li>
+                        <li>白灼虾 <span>—— 鲜甜弹牙，剥壳剥到手酸也停不下来</span></li>
+                        <li>清蒸鱼 <span>—— 寓意“年年有余”，鱼肉嫩得能抿化</span></li>
+                        <li>蒜蓉炒时蔬 <span>—— 解腻担当，绿油油的看着就舒服</span></li>
+                        <li>老火靓汤 <span>—— 从下午就开始煲，喝一口整个人都暖了</span></li>
+                        <li>月饼 <span>—— 饭后甜点，莲蓉蛋黄和五仁各来一块</span></li>
+                    </ul>
+
+                    <p>
+                        饮料也是备得足足的，桌上摆了好几瓶，大人喝大人的，我们喝我们的，
+                        碰杯的时候“叮”的一声，比什么背景音乐都好听。
+                    </p>
+
+                    <h2>吃到扶墙出</h2>
+
+                    <p>
+                        我原本以为自己战斗力还行，结果吃到一半就有点顶不住了。
+                        长辈们还在不停地往我碗里夹菜：“多吃点，这个你小时候最爱吃。”
+                        于是我的碗就像被施了魔法，永远都是满的。
+                    </p>
+
+                    <p>
+                        最后收尾的时候，我硬是又塞了半块月饼下去，
+                        然后瘫在椅子上，看着满桌的残羹剩菜，心里只有一个念头：
+                        <strong>给我吃美了😋</strong>
+                    </p>
+
+                    <h2>写在最后</h2>
+
+                    <p>
+                        吃完饭，一家人搬着小板凳到阳台上赏月。
+                        月亮比傍晚时更高、更亮了，云也散了，就那么安安静静地挂在天上。
+                        那一刻突然觉得，所谓“团圆”，其实不需要多隆重的仪式，
+                        一家人能坐在同一张桌子前，热热闹闹地吃一顿饭，就已经很好了。
+                    </p>
+
+                    <p>
+                        好了，这篇流水账就写到这里。
+                        祝看到这里的你，中秋快乐，月圆人团圆🌕
+                    </p>
+                </div>
+
+                <a href="../index.html" class="back-link">&lt; 返回首页</a>
+            </article>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 wyj484的Blog | Powered by Cloudflare Workers and Github Copilot(DeepSeek V4.1 Flash模型驱动)</p>
+        </footer>
+    </div>
+</body>
+</html>

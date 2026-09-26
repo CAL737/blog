@@ -43,7 +43,7 @@ const blogPosts = [
         date:"2026/9/25 23:30 BJT",
         title:"我吃了顿大餐",
         summary:"今天是中秋节，在晚上，我吃了顿丰盛的晚餐，给我吃美了😋",
-        link:"#",
+        link:"pages/mid-autumn-dinner.html",
         tags:["中秋节"]
     }
 ];
