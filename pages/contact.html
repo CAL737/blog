@@ -68,6 +68,14 @@
             border: 1px solid rgba(0, 243, 255, 0.35);
             color: var(--accent-cyan);
             text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+            overflow: hidden;
+        }
+
+        .contact-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .contact-info {
@@ -165,7 +173,7 @@
 
             <div class="contact-list">
                 <div class="contact-card">
-                    <div class="contact-icon">✈</div>
+                    <div class="contact-icon"><img src="../image/Telegram.png" alt="Telegram"></div>
                     <div class="contact-info">
                         <span class="label">TELEGRAM</span>
                         <a class="value" href="https://t.me/wyj484" target="_blank" rel="noopener">@wyj484</a>
