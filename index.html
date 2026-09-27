@@ -21,6 +21,9 @@
         /* --- 顶部导航与主题切换 --- */
         header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
         .logo { font-size: 1.2rem; font-weight: bold; color: var(--accent); text-decoration: none; }
+        .header-right { display: flex; align-items: center; gap: 15px; }
+        .nav-link { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; }
+        .nav-link:hover { color: var(--accent); }
         .theme-toggle { background: none; border: 1px solid var(--border); color: var(--text-dim); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 0.8rem;}
         .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
@@ -42,7 +45,10 @@
     <div class="container">
         <header>
             <a href="/" class="logo">> wyj484的Blog</a>
-            <button class="theme-toggle" id="themeBtn">[ Toggle Light ]</button>
+            <div class="header-right">
+                <a href="pages/contact.html" class="nav-link">[ 联系我 ]</a>
+                <button class="theme-toggle" id="themeBtn">[ Toggle Light ]</button>
+            </div>
         </header>
 
         <!-- 标签过滤区 -->
@@ -106,6 +112,11 @@
 
     <footer>
             <p>&copy; 2026 wyj484的Blog | Powered by Cloudflare Workers and Github Copilot(DeepSeek V4.1 Flash模型驱动)</p>
+            <p style="margin-top: 10px;">
+                <a href="https://t.me/wyj484" target="_blank" rel="noopener" style="color: var(--text-dim);">Telegram: @wyj484</a>
+                &nbsp;|&nbsp;
+                <a href="mailto:jcfk123@outlook.com" style="color: var(--text-dim);">Email: jcfk123@outlook.com</a>
+            </p>
     </footer>
 </body>
 </html>
