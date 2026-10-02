@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我发布了一期新视频 | wyj484的Blog</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ===== 文章页专属样式（复用 style.css 的变量与主题） ===== */
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed rgba(0, 243, 255, 0.25);
+        }
+
+        .article-header h1 {
+            font-size: 1.8rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .article-header h1::before {
+            content: "# ";
+            color: var(--accent-purple);
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+        }
+
+        .article-meta .tag {
+            color: var(--accent-cyan);
+        }
+
+        /* 正文排版 */
+        .article-body p {
+            margin-bottom: 20px;
+            font-size: 0.98rem;
+            color: var(--text-main);
+        }
+
+        .article-body h2 {
+            font-size: 1.15rem;
+            margin: 40px 0 18px;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px rgba(0, 243, 255, 0.35);
+        }
+
+        .article-body h2::before {
+            content: "> ";
+            color: var(--accent-purple);
+        }
+
+        .article-body strong {
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        .article-body em {
+            color: var(--accent-purple);
+            font-style: normal;
+        }
+
+        /* 引用块 */
+        .article-body blockquote {
+            border-left: 3px solid var(--accent-purple);
+            background: rgba(189, 0, 255, 0.06);
+            padding: 15px 20px;
+            margin: 25px 0;
+            color: var(--text-dim);
+            font-size: 0.92rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* 视频卡片 */
+        .video-card {
+            display: block;
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 243, 255, 0.25);
+            border-radius: 4px;
+            padding: 25px;
+            margin: 30px 0;
+            backdrop-filter: blur(5px);
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 5px 25px rgba(0, 243, 255, 0.15);
+        }
+
+        .video-card .video-label {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .video-card .video-title {
+            display: block;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .video-card .video-title::before {
+            content: "> ";
+            color: var(--accent-purple);
+        }
+
+        .video-card .video-url {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            word-break: break-all;
+        }
+
+        /* 返回链接 */
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 4px;
+        }
+
+        .back-link:hover {
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 12px rgba(0, 243, 255, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .article-header h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="logo">> wyj484的Blog</a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../index.html">Archive</a>
+            </nav>
+        </header>
+
+        <main>
+            <article>
+                <div class="article-header">
+                    <h1>我发布了一期新视频</h1>
+                    <div class="article-meta">
+                        <span>// 2026/10/2 14:00 BJT</span>
+                        <span class="tag">#新视频</span>
+                        <span class="tag">#国庆节</span>
+                    </div>
+                </div>
+
+                <div class="article-body">
+                    <p>
+                        今天是 <strong>2026 年 10 月 2 日</strong>，国庆假期的第二天。
+                        趁着放假有空，我把攒了好几天的素材剪完，终于把新一期视频发出来了。
+                    </p>
+
+                    <p>
+                        这期视频从选题到剪辑前前后后折腾了挺久，中间推翻重做了两次，
+                        最后成片我自己还算满意。发出去的那一刻，心里那块石头总算落地了。
+                    </p>
+
+                    <a class="video-card" href="https://www.bilibili.com/video/BV1rMa16jEed" target="_blank" rel="noopener">
+                        <span class="video-label">// BILIBILI</span>
+                        <span class="video-title">点击跳转我的视频</span>
+                        <span class="video-url">https://www.bilibili.com/video/BV1rMa16jEed</span>
+                    </a>
+
+                    <h2>关于这期视频</h2>
+
+                    <p>
+                        内容还是我熟悉的路子，节奏比上一期快了一些，也加了一点新的尝试。
+                        如果你看完有什么想法，欢迎在评论区告诉我，我都会看的。
+                    </p>
+
+                    <blockquote>
+                        做视频最开心的时刻，不是点下“发布”的那一秒，而是看到有人认真看完并留下评论的时候。
+                    </blockquote>
+
+                    <h2>写在最后</h2>
+
+                    <p>
+                        感谢每一位点进来、看完、点赞、投币、收藏、转发的朋友，
+                        你们的支持就是我继续更新的最大动力。
+                    </p>
+
+                    <p>
+                        祝大家国庆假期玩得开心，出门注意安全，我们下期视频再见🎬
+                    </p>
+                </div>
+
+                <a href="../index.html" class="back-link">&lt; 返回首页</a>
+            </article>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 wyj484的Blog | Powered by Cloudflare Workers and Github Copilot(DeepSeek V4.1 Flash模型驱动)</p>
+        </footer>
+    </div>
+</body>
+</html>

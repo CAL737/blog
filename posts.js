@@ -50,7 +50,7 @@ const blogPosts = [
         date:"2026/10/2 14:00 BJT",
         title:"我发布了一期新视频",
         summary:"我发布了一期新的视频，请多支持！<a href='https://www.bilibili.com/video/BV1rMa16jEed' target='_blank'>点击跳转我的视频</a>",
-        link:"#",
+        link:"pages/national-day-video.html",
         tags:["新视频","国庆节"]
     }
 ];
