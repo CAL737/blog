@@ -45,5 +45,12 @@ const blogPosts = [
         summary:"今天是中秋节，在晚上，我吃了顿丰盛的晚餐，给我吃美了😋",
         link:"pages/mid-autumn-dinner.html",
         tags:["中秋节"]
+    },
+    {
+        date:"2026/10/2 14:00 BJT",
+        title:"我发布了一期新视频",
+        summary:"我发布了一期新的视频，请多支持！<a href='https://www.bilibili.com/video/BV1rMa16jEed' target='_blank'>点击跳转我的视频</a>",
+        link:"#",
+        tags:["新视频","国庆节"]
     }
 ];
